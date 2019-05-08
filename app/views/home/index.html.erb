@@ -1,4 +1,36 @@
 <h1>Home#index</h1>
 <p>Find me in app/views/home/index.html.erb</p>
 
-<button class='btn btn-primary'>123</button>
+<div>
+  <%= image_tag("paris/louvre/paris_louvre_000022.jpg", :alt => "louvre", id: 'image') %>
+</div>
+
+<button id='crop-btn' class='btn btn-primary'>Crop & Search</button>
+
+<script type="text/javascript">
+  $(function() {
+    var $image = $('#image');
+
+    $image.cropper({
+      // aspectRatio: 16 / 9,
+      // crop: function(event) {
+      //   console.log(event.detail.x);
+      //   console.log(event.detail.y);
+      //   console.log(event.detail.width);
+      //   console.log(event.detail.height);
+      //   console.log(event.detail.rotate);
+      //   console.log(event.detail.scaleX);
+      //   console.log(event.detail.scaleY);
+      // }
+    });
+
+     // Get the Cropper.js instance after initialized
+    $('#crop-btn').click(function(event) {
+      var cropper = $image.data('cropper');
+      var data = cropper.getData;
+
+      // image crop data
+      params = {'x': data.x, 'y': data.y, 'width': data.width, 'height': data.height}
+    });
+  });
+</script>
