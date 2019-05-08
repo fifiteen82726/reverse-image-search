@@ -2,7 +2,9 @@
 # import pandas as pd
 # import cv2
 # import matplotlib.pyplot as plt
-# import os
+import os
+import sys
+
 
 # dataset_path = '../app/assets/images/paris/louvre/paris_louvre_000004.jpg'
 # # img_building = cv2.imread(os.path.join(dataset_path, 'paris_louvre_000013.jpg'))
@@ -33,8 +35,15 @@
 
 from image_match.goldberg import ImageSignature
 gis = ImageSignature()
-a = gis.generate_signature('paris_louvre_000004.jpg')
+
+if len(sys.argv) > 1:
+  path = 'python/img/' + sys.argv[1] + '.jpg'
+else:
+  path = 'new.jpg'
+
+a = gis.generate_signature(path)
 
 print a
 # b = gis.generate_signature('https://pixabay.com/static/uploads/photo/2012/11/28/08/56/mona-lisa-67506_960_720.jpg')
 # gis.normalized_distance(a, b)
+

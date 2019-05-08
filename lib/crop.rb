@@ -8,8 +8,10 @@ class Crop
     img = Magick::Image.read(path)[0]
 
     chopped = img.crop(0, 0, 107, 139)
-    chopped.write('python/new.jpg')
+    timestamp = Time.now.to_i.to_s
+    name = "python/img/#{Time.now.to_i.to_s}.jpg"
+    chopped.write(name)
 
-    `python python/feature-extraction.py`
+    `python python/feature-extraction.py #{timestamp}`
   end
 end
