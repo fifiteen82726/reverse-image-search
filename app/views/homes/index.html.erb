@@ -1,11 +1,13 @@
-<h1>Home#index</h1>
-<p>Find me in app/views/home/index.html.erb</p>
+<!-- <div> -->
+  <%#= image_tag("louvre/paris_louvre_000022.jpg", :alt => "louvre", id: 'image') %>
+<!-- </div> -->
 
-<div>
-  <%= image_tag("paris/louvre/paris_louvre_000022.jpg", :alt => "louvre", id: 'image') %>
-</div>
+<!-- <button id='crop-btn' class='btn btn-primary'>Crop & Search</button> -->
 
-<button id='crop-btn' class='btn btn-primary'>Crop & Search</button>
+<% @homes.each do |home| %>
+  <h3><%= home.cate %></h3>
+  <%= link_to(image_tag("#{home.cate}/#{home.images.first.name}", :alt => "", id: 'home-image', class: 'cover-img'), home_path(home.id)) %>
+<% end %>
 
 <script type="text/javascript">
   $(function() {

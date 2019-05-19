@@ -17,4 +17,10 @@
  */
 
 
+.cover-img{
+  width: 300px;
+}
 
+.target-img{
+  width: 400px auto;
+}

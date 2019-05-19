@@ -1,0 +1,24 @@
+<div>
+  <%= image_tag("#{@image.home.cate}/#{@image.name}", id: 'image', class: 'target-img') %>
+</div>
+
+<button id='crop-btn' class='btn btn-primary'>Crop & Search</button>
+
+<script type="text/javascript">
+  $(function() {
+    var $image = $('#image');
+
+    $image.cropper({});
+
+     // Get the Cropper.js instance after initialized
+    $('#crop-btn').click(function(event) {
+      var cropper = $image.data('cropper');
+      var data = cropper.getData();
+
+      // image crop data
+      params = {'x': data.x, 'y': data.y, 'width': data.width, 'height': data.height};
+
+      console.log(params);
+    });
+  });
+</script>

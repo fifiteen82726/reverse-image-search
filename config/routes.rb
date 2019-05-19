@@ -1,5 +1,8 @@
 Rails.application.routes.draw do
-  root 'home#index'
+  get 'images/show'
 
-  # For details on the DSL available within this file, see http://guides.rubyonrails.org/routing.html
+  resources :orders
+  root 'homes#index'
+  resources :homes
+  resources :images
 end

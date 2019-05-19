@@ -17,10 +17,11 @@
 /yarn-error.log
 
 .byebug_history
-/app/assets/images/paris/*
+/app/assets/images/*
 /.idea
 /log
 /config/database.yml
 #/config/secrets.yml
 .DS_Store
 /python/img/*
+/test/*
