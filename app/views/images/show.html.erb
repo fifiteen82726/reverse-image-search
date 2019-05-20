@@ -1,5 +1,5 @@
 <div>
-  <%= image_tag("#{@image.home.cate}/#{@image.name}", id: 'image', class: 'target-img') %>
+  <%= image_tag("#{@image.home.cate}/#{@image.name}", id: 'image', class: 'target-img', name: "#{@image.home.cate}/#{@image.name}") %>
 </div>
 
 <button id='crop-btn' class='btn btn-primary'>Crop & Search</button>
@@ -16,9 +16,11 @@
       var data = cropper.getData();
 
       // image crop data
-      params = {'x': data.x, 'y': data.y, 'width': data.width, 'height': data.height};
+      params = {'x': data.x, 'y': data.y, 'width': data.width, 'height': data.height, img: $('#image').attr('name')};
 
-      console.log(params);
+      $.post('/images-search', {info: params}, function(data, textStatus, xhr) {
+        window.location.href = "/show-search";
+      });
     });
   });
 </script>

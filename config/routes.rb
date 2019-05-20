@@ -5,4 +5,6 @@ Rails.application.routes.draw do
   root 'homes#index'
   resources :homes
   resources :images
+  post 'images-search' => 'images#search'
+  get 'show-search' => 'images#show_search'
 end

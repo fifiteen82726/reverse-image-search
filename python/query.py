@@ -67,7 +67,7 @@ if __name__ == '__main__':
     new_image = None
     # try:
     mthd = 'resnet'
-    print(mthd)
+    # print(mthd)
       # new_image = sys.argv[2]
     # except IndexError:
         # print("usage: {} <method>".format(sys.argv[0]))
@@ -76,17 +76,30 @@ if __name__ == '__main__':
     # call make_samples(db) accordingly
     samples = getattr(methods[mthd](), "make_samples")(db)
     # query the first img in data.csv
-    query = samples[query_idx]
+    # query = samples[query_idx]
     # print("\n[+] query: {}\n".format(query["img"]))
 
-    img = 'database/defense/paris_defense_000000.jpg'
-    make_query = create_query(img, 'vim')
+    make_query = create_query(sys.argv[1], sys.argv[2])
+
+    print(make_query)
 
     # print(query == make_query)
 
     _, result = infer(make_query, samples=samples, depth=depth, d_type=d_type)
 
+    r = []
     for match in result:
+      # r.append(result['img'])
         print("{}:\t{},\tClass {}".format(match["img"],
                                           match["dis"],
                                           match["cls"]))
+    # print(r)
+
+    # f = open("", "a")
+    # f.write("Now the file has more content!")
+    # f.close()
+
+
+
+
+
