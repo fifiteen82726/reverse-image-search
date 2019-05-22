@@ -1,6 +1,7 @@
 # README
 
 This is a CBIR system implemented by Rails and Python
+
 Video demo: https://youtu.be/mNyZ0TLwdP0
 
 * Ruby version: 2.5.1
