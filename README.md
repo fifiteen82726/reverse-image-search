@@ -7,6 +7,7 @@ Video demo: https://youtu.be/mNyZ0TLwdP0
 * Configuration image data
 
 Please put your image in the `database` folder like this structure
+
 ![image](https://user-images.githubusercontent.com/6240395/58141284-72da4300-7c08-11e9-9612-0dc187a137ae.png)
 
 
@@ -48,5 +49,9 @@ database/eiffel/paris_eiffel_000128.jpg	0.40601611137390137,	Class eiffel
 - Reference
 
 https://github.com/ry/tensorflow-resnet 
-https://github.com/KaimingHe/deep-residual-networks https://github.com/pochih/CBIR/blob/master/src/resnet.py
+
+https://github.com/KaimingHe/deep-residual-networks 
+
+https://github.com/pochih/CBIR/blob/master/src/resnet.py
+
 http://web.stanford.edu/class/cs276/handouts/EvaluationNew-handout-1-per.pdf
